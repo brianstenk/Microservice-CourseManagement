@@ -59,7 +59,7 @@ public class CourseController {
         transaction.setCourse(courseService.findCourseById(transaction.getCourse().getId()));
         return new ResponseEntity<>(courseService.saveTransaction(transaction), HttpStatus.CREATED);
     }
-
+    @GetMapping("/service/course/{courseId}")
     public ResponseEntity<?> findStudentsOfCOurse(@PathVariable Long courseId){
         List<Transaction> transactions = courseService.findTransactionsOfCourse(courseId);
         if(CollectionUtils.isEmpty(transactions)){
