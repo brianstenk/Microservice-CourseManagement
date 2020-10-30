@@ -53,6 +53,7 @@ public class CourseController {
     public ResponseEntity<?> findAllCourses(){
         return ResponseEntity.ok(courseService.allCourses());
     }
+
     @PostMapping("/service/enroll")
     public ResponseEntity<?> saveTransaction(@RequestBody Transaction transaction){
         transaction.setDateOfIssue(LocalDateTime.now());
